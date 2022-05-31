@@ -1,0 +1,20 @@
+{
+  "name": "van-app-api",
+  "version": "1.0.0",
+  "description": "Aplicação em NodeJS - Van App",
+  "main": "/bin/server.js",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/server.js",
+    "dev": "nodemon ./bin/server.js"
+  },
+  "author": "BS-Softwares Inc.",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "debug": "^4.3.3",
+    "dotenv": "^14.1.0",
+    "express": "^4.17.2",
+    "http": "^0.0.1-security"
+  }
+}
