@@ -8,14 +8,18 @@ exports.index = async (req, res) => {
 			let t1 = Date.now();
 			let value = await calc(0, 1, req.params.n - 2);
 			let t2 = Date.now();
-			res.status(200).send({ value: value, time: t2 - t1 });
+			res.status(200).send({ position: req.params.n, value: value, time: t2 - t1 });
 		} else {
-			res.status(400).send({ error: true });
+			let t1 = Date.now();
+			let n = (Math.floor(Math.random() * 1000) + 50);
+			let value = await calc(0, 1, n - 2);
+			let t2 = Date.now();
+			res.status(200).send({ position: n,value: value, time: t2 - t1 });
 			return;
 		}
 	} catch (e) {
 		console.log(e);
-		res.status(500).send({ error: e });
+		res.status(200).send({ error: e });
 		return;
 	}
 };
